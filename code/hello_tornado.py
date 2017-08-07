@@ -7,13 +7,13 @@ class MyHandler(tornado.web.RequestHandler):
         self.write('Hello, tornado')
 
 
-def make_appication():
+def make_application():
     return tornado.web.Application([
             (r'/', MyHandler),
         ])
 
 
 if __name__ == '__main__':
-    app = make_appication()
+    app = make_application()
     app.listen(8888)
     tornado.ioloop.IOLoop.current().start()
